@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+
+    @keyframes fade {
+      0% {
+        opacity: var(--fade-start-o, 0);
+        transform: translate(var(--fade-start-x, 0), var(--fade-start-y, 0)) scale(var(--fade-start-sx, 1), var(--fade-start-sx, 1));
+      }
+
+      100% {
+        opacity: var(--fade-end-o, 1);
+        transform: translate(var(--fade-end-x, 0), var(--fade-end-y, 0)) scale(var(--fade-end-sx, 1), var(--fade-end-sx, 1));
+      }
+    }
+
+    .fade.--2 {
+      --fade-start-o: 0.1;
+      --fade-end-o: 0.3;
+    }
+
+    .fade.--3 {
+      --fade-start-o: 1;
+      --fade-end-o: 0.1;
+    }
+
+    .fade.--4 {
+      --fade-start-o: 0.6;
+      --fade-end-o: 0;
+    }
+
+    .fade.--5 {
+      --fade-start-x: -100%;
+    }
+
+    .fade.--6 {
+      --fade-start-x: 100%;
+    }
+
+    .fade.--7 {
+      --fade-start-y: 100%;
+    }
+
+    .fade.--8 {
+      --fade-start-x: 100%;
+      --fade-start-y: 100%;
+    }
+
+    .fade.--9 {
+      --fade-start-x: -100%;
+      --fade-start-sx: 0;
+      --fade-start-sy: 0;
+    }
+
+    .fade.--10 {
+      --fade-start-o: 1;
+      --fade-end-o: 0;
+      --fade-end-x: 100%;
+      --fade-end-sx: 0;
+      --fade-end-sy: 0;
+    }
+
+    .container {
+      padding: 5vmin;
+      background: linear-gradient(294deg, var(--color-dark), var(--color-main), var(--color-light)) center/cover no-repeat;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .item + .item {
+      margin-top: 5vmin;
+    }
+
+    .item-title {
+      margin-bottom: 2vmin;
+      color: white;
+      font-weight: bold;
+    }
+
+    .examples {
+      margin: auto;
+      display: grid;
+      grid-gap: 5vmin;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+    }
+
+    .block {
+      width: 30vmin;
+      height: 30vmin;
+      border-radius: 10px;
+      background: white;
+      position: relative;
+    }
+
+    .example {
+      position: relative;
+    }
+
+    .example-note {
+      font-size: 12px;
+      line-height: 1.5;
+      color: var(--color-dark);
+      position: absolute;
+      bottom: 5px;
+      left: 10px;
+      padding: 5px 10px;
+      background: white;
+      box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    .fade {
+      animation: fade 1s ease infinite alternate;
+    }
+
+
+    html, body {
+      margin: 0;
+    }
+
+    :root {
+      --color-dark: #16001E;
+      --color-main: #7F2982;
+      --color-light: #F7B2B7;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="item">
+    <p class="item-title">Fade in out</p>
+    <div class="examples">
+      <div class="example">
+        <div class="block fade --1"></div>
+      </div>
+      <div class="example">
+        <div class="block fade --2"></div>
+        <p class="example-note">
+          --fade-start-o: 0.1;<br />
+          --fade-end-o: 0.3;
+        </p>
+      </div>
+      <div class="example">
+        <div class="block fade --3"></div>
+        <p class="example-note">
+          --fade-start-o: 1;<br />
+          --fade-end-o: 0.1;
+        </p>
+      </div>
+      <div class="example">
+        <div class="block fade --4"></div>
+        <p class="example-note">
+          --fade-start-o: 0.6;<br />
+          --fade-end-o: 0;
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="item">
+    <div class="item-title">Directional fade in</div>
+    <div class="examples">
+      <div class="example">
+        <div class="block fade --5"></div>
+        <p class="example-note">
+          --fade-start-x: -100%
+        </p>
+      </div>
+      <div class="example">
+        <div class="block fade --6"></div>
+        <p class="example-note">
+          --fade-start-x: 100%
+        </p>
+      </div>
+      <div class="example">
+        <div class="block fade --7"></div>
+        <p class="example-note">
+          --fade-start-y: 100%
+        </p>
+      </div>
+      <div class="example">
+        <div class="block fade --8"></div>
+        <p class="example-note">
+          --fade-start-x: 100%<br />
+          --fade-start-y: 100%
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="item">
+    <div class="item-title">Directional scale fade</div>
+    <div class="examples">
+      <div class="example">
+        <div class="block fade --9"></div>
+        <p class="example-note">
+          --fade-start-x: -100%<br />
+          --fade-start-sx: 0<br />
+          --fade-start-sy: 0<br />
+        </p>
+      </div>
+      <div class="example">
+        <div class="block fade --10"></div>
+        <p class="example-note">
+          --fade-start-o: 1;<br />
+          --fade-end-o: 0;<br />
+          --fade-end-x: 100%<br />
+          --fade-end-sx: 0<br />
+          --fade-end-sy: 0
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

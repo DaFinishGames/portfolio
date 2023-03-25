@@ -1,0 +1,96 @@
+*:link{
+    color: #E2E2E2;
+    text-decoration-line: none;
+}
+
+*:visited{
+    color: #E2E2E2;
+    text-decoration-line: none;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* Style for the navigation bar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #333;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    box-sizing: border-box;
+    z-index: 999;
+}
+
+/* Style for the logo */
+.navbar .logo {
+    width: 58px;
+    height: 58px;
+}
+
+/* Style for the burger icon */
+.navbar .burger {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Style for the hidden bar */
+.hidden-bar {
+    position: fixed;
+    top: 60px;
+    left: -200px;
+    width: 200px;
+    height: 100%;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+    z-index: 999;
+}
+
+/* Style for the links in the hidden bar */
+.hidden-bar a {
+    display: block;
+    margin: 10px 0;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+/* Style to show the hidden bar when the burger icon is clicked */
+.show-bar {
+    left: 0;
+}
+
+.content {
+    position: fixed;
+    top:60px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: center;
+    align-content: stretch;
+}
+
+#portfolioTitle{
+    font-family: monospace;
+    animation: blink .5s step-end infinite alternate;
+    border-right: 3px solid;
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent
+    }
+}

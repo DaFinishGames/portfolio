@@ -66,6 +66,11 @@
     --chars: 19ch;
 }
 
+.portfolio{
+    --width: 23;
+    --chars: 23ch;
+}
+
 .typingEffect {
     width: var(--width)ch;
     white-space: nowrap;

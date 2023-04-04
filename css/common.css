@@ -95,6 +95,10 @@ body {
     border-right: 3px solid;
 }
 
+.hidden{
+    visibility: hidden;
+}
+
 @keyframes blink {
     50% {
         border-color: transparent

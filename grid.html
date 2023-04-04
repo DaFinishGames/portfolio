@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Web Page</title>
+    <link type="text/css" href="css/grid.css" rel="stylesheet" >
+</head>
+<body>
+<!-- Navigation Bar -->
+<header class="navbar grid tri-column">
+    <div class="burger-container flex centered"><p class="burger">&#9776;</p></div>
+    <div class="flex centered"><p id="portfolioTitle">Alessandro's Portfolio</p></div>
+    <div class="logo-container flex"><img class="logo" src="resources/Logo.png"/></div>
+</header>
+
+<!-- Hidden Bar -->
+<nav class="sidebar">
+    <ul class="no-bullets">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Projects</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- Content -->
+<section class="main-container flex vertical-direction">
+    <section class="filler"></section>
+    <section class="slideshow grid tri-column single-row" >
+        <div class="previous-button flex centered"><</div>
+        <div class="flex vertical-direction">
+            <div class="slide-container">
+                <div class="slide active white"></div>
+                <div class="slide yellow"></div>
+                <div class="slide purple"></div>
+            </div>
+            <div class="slide-dot-container grid penta-column single-row">
+                <div></div>
+                <div class="flex centered">
+                    <svg class="dot-container"><circle class="dot"></circle></svg>
+                </div>
+                <div class="flex centered">
+                    <svg class="dot-container"><circle class="dot"></circle></svg>
+                </div>
+                <div class="flex centered">
+                    <svg class="dot-container"><circle class="dot"></circle></svg>
+                </div>
+                <div></div>
+            </div>
+        </div>
+        <div class="next-button flex centered">></div>
+    </section>
+    <section class="project-table grid tri-column tri-row">
+        <a href="https://github.com/alessandrorosmarino/Play-Performance" target="_blank" class="flex centered playPerformance project">
+            <p class="typingEffect playPerformance">> Go to Play Performance!</p>
+        </a>
+        <a href="https://github.com/alessandrorosmarino/Wrapper" target="_blank" class="flex centered dependencyInjector project">
+            <p class="typingEffect dependencyInjector">> Go to the Dependency Injector!</p>
+        </a>
+        <a href="https://github.com/alessandrorosmarino/ecommerce" target="_blank" class="flex centered ecommerce project">
+            <p class="typingEffect ecommerce">> Go to E-Commerce!</p>
+        </a>
+        <a href="https://github.com/alessandrorosmarino/portfolio" target="_blank" class="flex centered portfolio project">
+            <p class="typingEffect portfolio">> Go to the Portfolio!</p>
+        </a>
+        <div class="flex centered">
+        </div>
+        <div class="flex centered">
+        </div>
+        <div class="flex centered">
+        </div>
+        <div class="flex centered">
+        </div>
+        <div class="flex centered">
+        </div>
+    </section>
+</section>
+
+<script type="application/javascript" src="js/util.js"></script>
+</body>
+</html>
+

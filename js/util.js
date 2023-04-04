@@ -1,18 +1,66 @@
 // Script to toggle the hidden bar
 var burger = document.querySelector('.burger');
-var hiddenBar = document.querySelector('.hidden-bar');
+var sidebar = document.querySelector('.sidebar');
 
 burger.addEventListener('click', function() {
-    hiddenBar.classList.toggle('show-bar');
+    sidebar.classList.toggle('show-sidebar');
 });
 
-var objs = document.getElementsByClassName("cell");
-
-for (var obj of objs) {
-    obj.addEventListener(
+// Script to perform the reverse animation only after hover
+var projects = document.getElementsByClassName("project");
+for (let i = 0; i < projects.length; i++) {
+    projects[i].addEventListener(
         "mouseover",
-        function (){
-            this.classList.add("hovered");
+        () => {
+            projects[i].classList.add("hovered");
         }
     )
+}
+
+
+//Script for the slideshow behaviour
+var prev = document.querySelector(".previous-button");
+var next = document.querySelector(".next-button");
+var slides = document.getElementsByClassName("slide");
+var dots = document.getElementsByClassName("dot");
+
+prev.addEventListener("click", () =>{
+    nextSlide(false);
+})
+
+next.addEventListener("click", () =>{
+    nextSlide(true);
+})
+
+function nextSlide(direction){
+    var found = false;
+    var check = direction ? slides.length-1 : 0;
+    var index = direction ? -1 : slides.length;
+
+    for (let i = 0; i < slides.length && !found; i++) {
+        if(slides[i].classList.contains("active")){
+            found=true;
+            slides[i].classList.toggle("active");
+        }
+
+        if (found){
+            if(i === check){
+                i = index;
+            }
+            slides[direction?++i:--i].classList.toggle("active");
+        }
+    }
+}
+
+for (let i = 0; i < dots.length; i++) {
+    dots[i].addEventListener("click", () =>{
+        selectSlide(i);
+    })
+}
+
+function selectSlide(index){
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].classList.remove("active");
+    }
+    slides[index].classList.add("active")
 }

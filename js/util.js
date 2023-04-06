@@ -39,15 +39,10 @@ function nextSlide(direction){
 
     for (let i = 0; i < slides.length && !found; i++) {
         if(slides[i].classList.contains("active")){
-            found=true;
-            slides[i].classList.toggle("active");
-        }
-
-        if (found){
             if(i === check){
                 i = index;
             }
-            slides[direction?++i:--i].classList.toggle("active");
+            selectSlide(direction?++i:--i);
         }
     }
 }
@@ -62,5 +57,9 @@ function selectSlide(index){
     for (let i = 0; i < slides.length; i++) {
         slides[i].classList.remove("active");
     }
-    slides[index].classList.add("active")
+    slides[index].classList.add("active");
+    for (let i = 0; i < dots.length; i++) {
+        dots[i].classList.remove("dot-selected");
+    }
+    dots[index].classList.add("dot-selected");
 }

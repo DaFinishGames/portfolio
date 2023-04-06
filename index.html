@@ -3,53 +3,94 @@
 <head>
     <title>My Web Page</title>
     <link type="text/css" href="css/common.css" rel="stylesheet" >
-    <link type="text/css" href="css/table.css" rel="stylesheet" >
-    <link type="text/css" href="css/slideshow.css" rel="stylesheet" >
 </head>
 <body>
 <!-- Navigation Bar -->
-<div class="navbar">
-    <div class="burger">&#9776;</div>
-    <div id="portfolioTitle">Alessandro's Portfolio</div>
-    <div class="logo"><img class="logo" src="resources/Logo.png"/></div>
-</div>
+<header class="navbar grid tri-column single-row">
+    <div class="burger-container flex centered"><p class="burger">&#9776;</p></div>
+    <div class="flex centered"><p id="portfolioTitle">Alessandro's Portfolio</p></div>
+    <div class="logo-container flex"><img class="logo" src="resources/Logo.png"/></div>
+</header>
 
 <!-- Hidden Bar -->
-<div class="hidden-bar">
-    <a href="#">Home</a>
-    <a href="#">Projects</a>
-    <a href="#">Services</a>
-    <a href="#">Contact</a>
-</div>
+<nav class="sidebar">
+    <ul class="no-bullets">
+        <li><a href="#">Home</a></li>
+        <li><a href="#project-table">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+</nav>
 
 <!-- Content -->
-<div id="slides" class="content">
-    <div class="slideshow"></div>
-</div>
-<div id="projects" class="content">
-    <a href="https://github.com/alessandrorosmarino/Play-Performance" target="_blank" class="cell playPerformance">
-        <div class="typingEffect playPerformance">> Go to Play Performance!</div>
-    </a>
-    <a href="https://github.com/alessandrorosmarino/Wrapper" target="_blank" class="cell dependencyInjector">
-        <div class="typingEffect dependencyInjector">> Go to the Dependency Injector!</div>
-    </a>
-    <a href="https://github.com/alessandrorosmarino/ecommerce" target="_blank" class="cell ecommerce">
-        <div class="typingEffect ecommerce">> Go to E-Commerce!</div>
-    </a>
-    <a href="https://github.com/alessandrorosmarino/portfolio" target="_blank" class="cell portfolio">
-        <div class="typingEffect portfolio">> Go to the Portfolio!</div>
-    </a>
-    <div class="cell">
-    </div>
-    <div class="cell">
-    </div>
-    <div class="cell">
-    </div>
-    <div class="cell">
-    </div>
-    <div class="cell">
-    </div>
-</div>
+<section class="main-container flex vertical-direction">
+    <div id="project-table"></div>
+    <section class="filler"></section>
+    <!--
+    <section class="slideshow grid tri-column single-row" >
+        <div class="previous-button flex centered"><</div>
+        <div class="flex vertical-direction">
+            <div class="slide-container">
+                <div class="slide active white"></div>
+                <div class="slide yellow"></div>
+                <div class="slide purple"></div>
+            </div>
+            <div class="slide-dot-container grid penta-column single-row">
+                <div></div>
+                <div class="flex centered">
+                    <svg class="dot-container"><circle class="dot"></circle></svg>
+                </div>
+                <div class="flex centered">
+                    <svg class="dot-container"><circle class="dot"></circle></svg>
+                </div>
+                <div class="flex centered">
+                    <svg class="dot-container"><circle class="dot"></circle></svg>
+                </div>
+                <div></div>
+            </div>
+        </div>
+        <div class="next-button flex centered">></div>
+    </section>
+    -->
+    <section  class="project-table grid tri-column tri-row">
+        <a href="https://github.com/alessandrorosmarino/Play-Performance" target="_blank" class="flex centered project vertical-direction">
+            <div class="flex centered vertical-direction">
+                <p class="monospace">Play Performance</p>
+                <div class="playPerformance-technologies grid penta-column single-row">
+                    <div></div>
+                    <img class="technology" src="resources/spring.svg">
+                    <img class="technology" src="resources/mySQL.png">
+                    <img class="technology" src="resources/angular.png">
+                    <div></div>
+                </div>
+            </div>
+            <p class="typingEffect monospace goToProject">> Go to project!</p>
+        </a>
+        <a href="https://github.com/alessandrorosmarino/Wrapper" target="_blank" class="flex centered dependencyInjector project">
+            <p class="typingEffect dependencyInjector">> Go to the Dependency Injector!</p>
+        </a>
+        <a href="https://github.com/alessandrorosmarino/ecommerce" target="_blank" class="flex centered ecommerce project">
+            <p class="typingEffect ecommerce">> Go to E-Commerce!</p>
+        </a>
+        <a href="https://github.com/alessandrorosmarino/portfolio" target="_blank" class="flex centered portfolio project">
+            <p class="typingEffect portfolio">> Go to the Portfolio!</p>
+        </a>
+        <div class="flex centered">
+        </div>
+        <div class="flex centered">
+        </div>
+        <div class="flex centered">
+        </div>
+        <div class="flex centered">
+        </div>
+        <div class="flex centered">
+        </div>
+    </section>
+    <div id="skills"></div>
+    <section class="skills grid tri-row single-column">
+
+    </section>
+</section>
 
 <script type="application/javascript" src="js/util.js"></script>
 </body>

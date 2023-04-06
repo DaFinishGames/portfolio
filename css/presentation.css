@@ -1,0 +1,12 @@
+
+.presentation{
+    height: var(--section-half-height);
+    --grid-n-column: 1fr 1fr;
+    --grid-n-row: 1fr;
+    color: #E2E2E2;
+}
+
+.portrait{
+    width: 250px;
+    height: 250px;
+}

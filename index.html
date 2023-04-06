@@ -2,11 +2,11 @@
 <html>
 <head>
     <title>My Web Page</title>
-    <link type="text/css" href="css/common.css" rel="stylesheet" >
+    <link type="text/css" href="css/stylesheet.css" rel="stylesheet" >
 </head>
 <body>
 <!-- Navigation Bar -->
-<header class="navbar grid tri-column single-row">
+<header class="navbar grid">
     <div class="burger-container flex centered"><p class="burger">&#9776;</p></div>
     <div class="flex centered"><p id="portfolioTitle">Alessandro's Portfolio</p></div>
     <div class="logo-container flex"><img class="logo" src="resources/Logo.png"/></div>
@@ -16,16 +16,35 @@
 <nav class="sidebar">
     <ul class="no-bullets">
         <li><a href="#">Home</a></li>
-        <li><a href="#project-table">Projects</a></li>
-        <li><a href="#skills">Skills</a></li>
+        <li><a href="#">Projects</a></li>
+        <li><a href="#">Skills</a></li>
         <li><a href="#">Contact</a></li>
     </ul>
 </nav>
 
 <!-- Content -->
 <section class="main-container flex vertical-direction">
-    <div id="project-table"></div>
     <section class="filler"></section>
+    <!-- Presentation -->
+    <section class="presentation grid">
+        <div class="flex centered"> <img class="portrait" src="resources/alessandro.png"></div>
+        <div class="flex centered vertical-direction">
+            <p class="monospace">Java developer</p>
+            <p class="monospace">
+                Specialized in Java development and able to use the Spring Framework (Boot , Security, Data, Batch, Web).
+            </p>
+            <p class="monospace">
+                Skilled with relational database management and interpretation (Oracle, MSSQL, MySQL).
+            </p>
+            <p class="monospace">
+                Familiarity with front-end development.
+            </p>
+            <p class="monospace">
+                Familiarity with Git , Atlassian tools, and Jenkins.
+            </p>
+            <button> Download my CV </button>
+        </div>
+    </section>
     <!--
     <section class="slideshow grid tri-column single-row" >
         <div class="previous-button flex centered"><</div>
@@ -52,29 +71,51 @@
         <div class="next-button flex centered">></div>
     </section>
     -->
-    <section  class="project-table grid tri-column tri-row">
+    <!-- Projects -->
+    <section class="project-table grid">
         <a href="https://github.com/alessandrorosmarino/Play-Performance" target="_blank" class="flex centered project vertical-direction">
             <div class="flex centered vertical-direction">
                 <p class="monospace">Play Performance</p>
-                <div class="playPerformance-technologies grid penta-column single-row">
+                <div class="playPerformance-technologies grid">
                     <div></div>
+                    <img class="technology" src="resources/java.png">
                     <img class="technology" src="resources/spring.svg">
                     <img class="technology" src="resources/mySQL.png">
                     <img class="technology" src="resources/angular.png">
+                    <img class="technology" src="resources/html.png">
+                    <img class="technology" src="resources/css.png">
+                    <img class="technology" src="resources/js.png">
                     <div></div>
                 </div>
             </div>
             <p class="typingEffect monospace goToProject">> Go to project!</p>
         </a>
-        <a href="https://github.com/alessandrorosmarino/Wrapper" target="_blank" class="flex centered dependencyInjector project">
-            <p class="typingEffect dependencyInjector">> Go to the Dependency Injector!</p>
+        <a href="https://github.com/alessandrorosmarino/Wrapper" target="_blank" class="flex centered project vertical-direction">
+            <div class="flex centered vertical-direction">
+                <p class="monospace">Dependency Injector</p>
+                <div class="dependencyInjector-technologies grid">
+                    <div></div>
+                    <img class="technology" src="resources/java.png">
+                    <div></div>
+                </div>
+            </div>
+            <p class="typingEffect monospace goToProject">> Go to project!</p>
         </a>
-        <a href="https://github.com/alessandrorosmarino/ecommerce" target="_blank" class="flex centered ecommerce project">
-            <p class="typingEffect ecommerce">> Go to E-Commerce!</p>
+        <a href="https://github.com/alessandrorosmarino/portfolio" target="_blank" class="flex centered portfolio project vertical-direction">
+            <div class="flex centered vertical-direction">
+                <p class="monospace">Portfolio</p>
+                <div class="portfolio-technologies grid">
+                    <div></div>
+                    <img class="technology" src="resources/html.png">
+                    <img class="technology" src="resources/css.png">
+                    <img class="technology" src="resources/js.png">
+                    <div></div>
+                </div>
+            </div>
+            <p class="typingEffect monospace goToProject">> Go to project!</p>
         </a>
-        <a href="https://github.com/alessandrorosmarino/portfolio" target="_blank" class="flex centered portfolio project">
-            <p class="typingEffect portfolio">> Go to the Portfolio!</p>
-        </a>
+        <div class="flex centered">
+        </div>
         <div class="flex centered">
         </div>
         <div class="flex centered">
@@ -86,8 +127,8 @@
         <div class="flex centered">
         </div>
     </section>
-    <div id="skills"></div>
-    <section class="skills grid tri-row single-column">
+    <!-- Skills -->
+    <section class="skills grid">
 
     </section>
 </section>

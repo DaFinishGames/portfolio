@@ -1,0 +1,35 @@
+.navbar{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: var(--heading-height);
+    background-color: #333333;
+    color: #E2E2E2;
+    --grid-n-column: 1fr 1fr 1fr;
+    --grid-n-row: 1fr;
+}
+
+.logo-container{
+    justify-content: flex-end;
+    padding-right: var(--padding-space);
+}
+
+.logo{
+    width: var(--heading-height);
+    height: var(--heading-height);
+}
+
+.burger-container{
+    justify-content: flex-start;
+    padding-left: var(--padding-space);
+}
+
+.burger{
+    cursor: pointer;
+}
+
+#portfolioTitle{
+    font-family: monospace;
+    animation: blink .5s step-end infinite alternate;
+    border-right: 3px solid;
+}

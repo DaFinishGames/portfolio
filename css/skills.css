@@ -1,0 +1,6 @@
+
+.skills{
+    height: var(--section-half-height);
+    --grid-n-column: 1fr;
+    --grid-n-row: 1fr 1fr 1fr;
+}

@@ -1,0 +1,24 @@
+@keyframes typingIn {
+    from {
+        width: 0
+    }
+    to {
+        width: var(--chars)
+    }
+}
+
+@keyframes typingOut {
+    from {
+        width: var(--chars)
+    }
+    to {
+        width: 0
+    }
+}
+
+
+@keyframes blink {
+    50% {
+        border-color: transparent
+    }
+}

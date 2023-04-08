@@ -1,6 +1,72 @@
-
 .skills{
-    height: var(--section-half-height);
-    --grid-n-column: 1fr;
-    --grid-n-row: 1fr 1fr 1fr;
+    height: var(--section-quarter-height);
+    --grid-n-column: 1fr 1fr 1fr 1fr;
+    --grid-n-row: 1fr;
+}
+.progress-bar{
+    position: relative;
+    color: var(--text-color);
+}
+.progress-bar svg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+}
+
+.outer-circle{
+    fill: var(--text-color);
+}
+
+.inner-circle{
+    fill: var(--background-color);
+}
+
+.pointer{
+    fill:var(--effect-color);
+}
+
+.pointer-container{
+    --pointer-container-width: 100px;
+    --pointer-container-height: 10px;
+    position: absolute;
+    top: calc(50% - (var(--pointer-container-height) / 2 ));
+    left: calc(50% - (var(--pointer-container-width) / 2 ));
+    width: var(--pointer-container-width);
+    height: var(--pointer-container-height);
+    transition: transform 1s ease;
+}
+
+.pointer-svg{
+    width: 100%;
+    height: 100%
+}
+
+.skill-text{
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: calc(50%);
+
+}
+
+.rotate{
+    transform: rotateZ(var(--rotation));
+}
+
+.development{
+    --rotation: 162deg;
+}
+
+.problem-solving{
+    --rotation:167.4deg
+}
+
+.learning{
+    --rotation: 153deg;
+}
+
+.adaptivity{
+    --rotation: 162deg;
 }

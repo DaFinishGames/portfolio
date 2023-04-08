@@ -17,7 +17,7 @@ for (let i = 0; i < projects.length; i++) {
     )
 }
 
-
+/*
 //Script for the slideshow behaviour
 var prev = document.querySelector(".previous-button");
 var next = document.querySelector(".next-button");
@@ -62,4 +62,22 @@ function selectSlide(index){
         dots[i].classList.remove("dot-selected");
     }
     dots[index].classList.add("dot-selected");
+}
+*/
+
+/* Start skill appearing effect */
+
+var skills = document.querySelectorAll(".pointer-container");
+
+const rotationObserver = new IntersectionObserver(entries => {
+    for (const entry of entries) {
+        if(entry.isIntersecting){
+            entry.target.classList.add("rotate");
+        }else{
+            entry.target.classList.remove("rotate");
+        }
+    }
+});
+for (const skill of skills) {
+    rotationObserver.observe(skill);
 }

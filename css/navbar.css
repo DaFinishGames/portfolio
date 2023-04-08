@@ -3,8 +3,8 @@
     top: 0;
     width: 100%;
     height: var(--heading-height);
-    background-color: #333333;
-    color: #E2E2E2;
+    background-color: var(--background-color);
+    color: var(--text-color);
     --grid-n-column: 1fr 1fr 1fr;
     --grid-n-row: 1fr;
 }

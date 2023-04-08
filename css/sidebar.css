@@ -4,8 +4,8 @@
     left: calc(-1 * var(--sidebar-width));
     width: var(--sidebar-width);
     height: 100%;
-    background-color: #333333;
-    color: #E2E2E2;
+    background-color: var(--background-color);
+    color: var(--text-color);
     transition: left 1s;
 }
 

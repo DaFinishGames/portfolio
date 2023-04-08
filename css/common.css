@@ -1,11 +1,18 @@
 :root{
     --heading-height: 40px;
-    --section-full-height: calc(100vh - var(--heading-height));
-    --section-half-height: calc(50vh - var(--heading-height));
-    --section-quarter-height: calc(25vh - var(--heading-height));
+    --section-full-height-heading: calc(100vh - var(--heading-height));
+    --section-half-height-heading: calc(50vh - var(--heading-height));
+    --section-quarter-height-heading: calc(25vh - var(--heading-height));
+    --section-full-height: 100vh;
+    --section-half-height: 50vh;
+    --section-quarter-height: 25vh;
     --sidebar-width: 200px;
     --padding-space: 30px;
     --technology-icon: 40px;
+    --background-color: #333333;
+    --background-color-light: #717171;
+    --text-color: #E2E2E2;
+    --effect-color: #6874E8;
 }
 
 *{
@@ -15,12 +22,12 @@
 }
 
 *:link{
-     color: #E2E2E2;
+     color: var(--text-color);
      text-decoration-line: none;
  }
 
 *:visited{
-    color: #E2E2E2;
+    color: var(--text-color);
     text-decoration-line: none;
 }
 
@@ -54,11 +61,16 @@ body::-webkit-scrollbar{
     font-size: 2em;
 }
 
+.title{
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
 /* Start Main-container */
 
 .main-container{
     align-items: stretch;
-    background-color: #333333;
+    background-color: var(--background-color);
 }
 
 .filler{
@@ -76,4 +88,8 @@ body::-webkit-scrollbar{
 }
 .yellow{
     background-color: yellow;
+}
+
+.test{
+    height: var(--section-quarter-height);
 }

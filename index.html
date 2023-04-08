@@ -1,8 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>My Web Page</title>
+    <title>Alessandro's Portfolio</title>
     <link type="text/css" href="css/stylesheet.css" rel="stylesheet" >
+    <svg display="none">
+        <defs>
+            <path d="M 0 5 L 0 -5 L -50 0 L 0 5" id="triangle"></path>
+        </defs>
+    </svg>
 </head>
 <body>
 <!-- Navigation Bar -->
@@ -29,7 +34,8 @@
     <section class="presentation grid">
         <div class="flex centered"> <img class="portrait" src="resources/alessandro.png"></div>
         <div class="flex centered vertical-direction">
-            <p class="monospace">Java developer</p>
+            <p class="monospace job-title">Java developer</p>
+            <p class="divisor"></p>
             <p class="monospace">
                 Specialized in Java development and able to use the Spring Framework (Boot , Security, Data, Batch, Web).
             </p>
@@ -42,7 +48,8 @@
             <p class="monospace">
                 Familiarity with Git , Atlassian tools, and Jenkins.
             </p>
-            <button> Download my CV </button>
+            <p class="divisor"></p>
+            <a class="monospace download-button" href="resources/Alessandro%20Rosmarino%20CV.pdf" download="CV_Alessandro_Rosmarino" target="_blank"> Download my CV </a>
         </div>
     </section>
     <!--
@@ -75,7 +82,7 @@
     <section class="project-table grid">
         <a href="https://github.com/alessandrorosmarino/Play-Performance" target="_blank" class="flex centered project vertical-direction">
             <div class="flex centered vertical-direction">
-                <p class="monospace">Play Performance</p>
+                <p class="monospace title">Play Performance</p>
                 <div class="playPerformance-technologies grid">
                     <div></div>
                     <img class="technology" src="resources/java.png">
@@ -92,7 +99,7 @@
         </a>
         <a href="https://github.com/alessandrorosmarino/Wrapper" target="_blank" class="flex centered project vertical-direction">
             <div class="flex centered vertical-direction">
-                <p class="monospace">Dependency Injector</p>
+                <p class="monospace title">Dependency Injector</p>
                 <div class="dependencyInjector-technologies grid">
                     <div></div>
                     <img class="technology" src="resources/java.png">
@@ -103,7 +110,7 @@
         </a>
         <a href="https://github.com/alessandrorosmarino/portfolio" target="_blank" class="flex centered portfolio project vertical-direction">
             <div class="flex centered vertical-direction">
-                <p class="monospace">Portfolio</p>
+                <p class="monospace title">Portfolio</p>
                 <div class="portfolio-technologies grid">
                     <div></div>
                     <img class="technology" src="resources/html.png">
@@ -114,22 +121,49 @@
             </div>
             <p class="typingEffect monospace goToProject">> Go to project!</p>
         </a>
-        <div class="flex centered">
-        </div>
-        <div class="flex centered">
-        </div>
-        <div class="flex centered">
-        </div>
-        <div class="flex centered">
-        </div>
-        <div class="flex centered">
-        </div>
-        <div class="flex centered">
-        </div>
     </section>
     <!-- Skills -->
     <section class="skills grid">
-
+        <div class="progress-bar development">
+            <svg><circle class="outer-circle" r="50px" cx="50%" cy="100%"></circle></svg>
+            <svg><circle class="inner-circle" r="40px" cx="50%" cy="100%"></circle></svg>
+            <div class="pointer-container">
+                <svg class="pointer-svg">
+                    <use class="pointer" xlink:href="#triangle" x="50%" y="50%"></use>
+                </svg>
+            </div>
+            <p class="monospace skill-text title"> Software Development </p>
+        </div>
+        <div class="progress-bar problem-solving">
+            <svg><circle class="outer-circle" r="50px" cx="50%" cy="100%"></circle></svg>
+            <svg><circle class="inner-circle" r="40px" cx="50%" cy="100%"></circle></svg>
+            <div class="pointer-container">
+                <svg class="pointer-svg">
+                    <use class="pointer" xlink:href="#triangle" x="50%" y="50%"></use>
+                </svg>
+            </div>
+            <p class="monospace skill-text title"> Problem Solving </p>
+        </div>
+        <div class="progress-bar learning">
+            <svg><circle class="outer-circle" r="50px" cx="50%" cy="100%"></circle></svg>
+            <svg><circle class="inner-circle" r="40px" cx="50%" cy="100%"></circle></svg>
+            <div class="pointer-container">
+                <svg class="pointer-svg">
+                    <use class="pointer" xlink:href="#triangle" x="50%" y="50%"></use>
+                </svg>
+            </div>
+            <p class="monospace skill-text title"> Quick Learning </p>
+        </div>
+        <div class="progress-bar">
+            <svg><circle class="outer-circle" r="50px" cx="50%" cy="100%"></circle></svg>
+            <svg><circle class="inner-circle" r="40px" cx="50%" cy="100%"></circle></svg>
+            <div class="pointer-container adaptivity">
+                <svg class="pointer-svg">
+                    <use class="pointer" xlink:href="#triangle" x="50%" y="50%"></use>
+                </svg>
+            </div>
+            <p class="monospace skill-text title"> Adaptivity </p>
+        </div>
     </section>
 </section>
 

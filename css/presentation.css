@@ -1,12 +1,36 @@
 
 .presentation{
-    height: var(--section-half-height);
+    height: var(--section-full-height-heading);
     --grid-n-column: 1fr 1fr;
     --grid-n-row: 1fr;
-    color: #E2E2E2;
+    color: var(--text-color);
 }
 
 .portrait{
     width: 250px;
     height: 250px;
+}
+
+.job-title{
+    font-size: 4em;
+    color: var(--effect-color);
+}
+
+.divisor{
+    background-color: var(--text-color);
+    width: 80%;
+    height: 2px;
+    margin-bottom: var(--padding-space);
+    margin-top: var(--padding-space);
+}
+
+.download-button{
+    border-radius: 20px;
+    padding: 10px;
+    background-color: var(--background-color-light);
+    color: var(--text-color);
+    border-width: 0;
+}
+.download-button:hover{
+    background-color: var(--effect-color);
 }

@@ -1,0 +1,5 @@
+.education{
+    height: var(--section-quarter-height-heading);
+    --grid-n-column: 1fr 1fr;
+    --grid-n-row: 1fr;
+}

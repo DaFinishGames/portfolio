@@ -7,6 +7,9 @@
     color: var(--text-color);
     --grid-n-column: 1fr 1fr 1fr;
     --grid-n-row: 1fr;
+    border-bottom-width: 1px;
+    border-bottom-color: var(--background-color-light);
+    border-bottom-style: solid;
 }
 
 .logo-container{

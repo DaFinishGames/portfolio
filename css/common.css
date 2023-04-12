@@ -19,6 +19,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 *:link{
@@ -30,9 +31,14 @@
     color: var(--text-color);
     text-decoration-line: none;
 }
-
+/*
 body::-webkit-scrollbar{
     display: none;
+}
+*/
+
+body{
+    overflow-y: hidden;
 }
 
 .grid{
@@ -91,5 +97,5 @@ body::-webkit-scrollbar{
 }
 
 .test{
-    height: var(--section-quarter-height);
+    height: var(--section-full-height-heading);
 }

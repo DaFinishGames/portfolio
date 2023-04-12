@@ -1,3 +1,6 @@
+let headerHeight = getComputedStyle(document.documentElement).getPropertyValue("--heading-height");
+headerHeight = headerHeight.substring(0, headerHeight.indexOf("px"));
+
 // Script to toggle the hidden bar
 var burger = document.querySelector('.burger');
 var sidebar = document.querySelector('.sidebar');
@@ -80,4 +83,44 @@ const rotationObserver = new IntersectionObserver(entries => {
 });
 for (const skill of skills) {
     rotationObserver.observe(skill);
+}
+
+/* Start scrolling effect */
+
+var scrollingList = [];
+var presentationSection = document.querySelector(".presentation");
+var projectSection = document.querySelector(".project-table");
+
+scrollingList.push({element:presentationSection,selected:false});
+scrollingList.push({element:projectSection,selected:false});
+
+const sectionObserver = new IntersectionObserver(entries => {
+    for (const entry of entries) {
+        if(entry.intersectionRatio >= 1){
+            scrollingList.find( e => e.element === entry.target).selected = true;
+        }
+    }
+});
+
+for (let scrollingListElement of scrollingList) {
+    sectionObserver.observe(scrollingListElement.element);
+}
+
+window.addEventListener("wheel", (e) =>{
+    scrollToNextSection(e);
+})
+
+function scrollToNextSection(wheelEvent){
+    let elementIndexActive = scrollingList.findIndex(wheelEvent => wheelEvent.selected);
+    let nextIndex = elementIndexActive + (wheelEvent.deltaY > 0 ? 1 : -1);
+    if(!isOutOfBounds(scrollingList,nextIndex)){
+        let elementToScroll = scrollingList[nextIndex].element;
+        window.scrollTo(0,elementToScroll.offsetTop-headerHeight);
+        scrollingList[elementIndexActive].selected = false;
+        scrollingList[nextIndex].selected = true;
+    }
+}
+
+function isOutOfBounds(array, index){
+    return index >= array.length || index < 0;
 }

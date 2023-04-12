@@ -1,7 +1,7 @@
 .skills{
-    height: var(--section-quarter-height);
+    height: var(--section-half-height);
     --grid-n-column: 1fr 1fr 1fr 1fr;
-    --grid-n-row: 1fr;
+    --grid-n-row: 1fr 1fr;
 }
 .progress-bar{
     position: relative;
@@ -69,4 +69,12 @@
 
 .adaptivity{
     --rotation: 162deg;
+}
+
+.team{
+    --rotation: 149.4deg;
+}
+
+.analysis{
+    --rotation: 149.4deg;
 }

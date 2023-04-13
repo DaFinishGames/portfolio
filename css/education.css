@@ -1,5 +1,39 @@
 .education{
     height: var(--section-quarter-height-heading);
-    --grid-n-column: 1fr 1fr;
+    --grid-n-column: 1fr 1fr 1fr 1fr;
     --grid-n-row: 1fr;
+    color: var(--text-color);
+}
+
+.education-circle{
+    fill: var(--text-color);
+}
+
+.education-circle-pulse{
+    fill: var(--background-color-light);
+    animation: pulse 1s infinite alternate;
+}
+
+.education-container{
+    position: relative;
+}
+
+.education-text{
+    font-size: 1em;
+    width: 30ch;
+    white-space: normal;
+    justify-content: start;
+    text-align: center;
+}
+
+.education-container  svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.connecting-line{
+    fill: var(--text-color);
 }

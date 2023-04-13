@@ -86,7 +86,7 @@ for (const skill of skills) {
 }
 
 /* Start scrolling effect */
-
+let scrolling = false;
 var scrollingList = [];
 var presentationSection = document.querySelector(".presentation");
 var projectSection = document.querySelector(".project-table");
@@ -102,22 +102,35 @@ const sectionObserver = new IntersectionObserver(entries => {
     }
 });
 
-for (let scrollingListElement of scrollingList) {
-    sectionObserver.observe(scrollingListElement.element);
+document.addEventListener('DOMContentLoaded', function() {
+    for (let scrollingListElement of scrollingList) {
+        sectionObserver.observe(scrollingListElement.element);
+    }
+}, false);
+
+window.addEventListener("wheel", activateScrollingEffect);
+window.addEventListener("wheel", e => e.preventDefault(), { passive:false });
+
+function activateScrollingEffect(e){
+    if(!scrolling){
+        scrollToNextSection(e.deltaY > 0);
+    }
 }
 
-window.addEventListener("wheel", (e) =>{
-    scrollToNextSection(e);
-})
-
-function scrollToNextSection(wheelEvent){
-    let elementIndexActive = scrollingList.findIndex(wheelEvent => wheelEvent.selected);
-    let nextIndex = elementIndexActive + (wheelEvent.deltaY > 0 ? 1 : -1);
-    if(!isOutOfBounds(scrollingList,nextIndex)){
+function scrollToNextSection(forward){
+    let elementIndexActive = scrollingList.findIndex(e => e.selected);
+    let nextIndex = elementIndexActive + ( forward? 1 : -1);
+    scrolling = !isOutOfBounds(scrollingList,nextIndex);
+    if(scrolling){
+        window.removeEventListener("wheel", activateScrollingEffect);
         let elementToScroll = scrollingList[nextIndex].element;
         window.scrollTo(0,elementToScroll.offsetTop-headerHeight);
         scrollingList[elementIndexActive].selected = false;
         scrollingList[nextIndex].selected = true;
+        setTimeout(() => {
+            scrolling = false;
+            window.addEventListener("wheel",activateScrollingEffect);
+        }, 1500);
     }
 }
 

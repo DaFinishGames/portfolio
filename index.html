@@ -8,6 +8,12 @@
             <path d="M 0 5 L 0 -5 L -50 0 L 0 5" id="triangle"></path>
             <circle class="outer-circle" r="50px" cx="50%" cy="100%" id="outer-circle"></circle>
             <circle class="inner-circle" r="40px" cx="50%" cy="100%" id="inner-circle"></circle>
+            <circle class="education-circle" r="20px" cx="50%" cy="25%" id="education-circle"></circle>
+            <circle class="education-circle-pulse" r="30px" cx="50%" cy="25%" id="education-circle-pulse"></circle>
+            <rect class="connecting-line" height="2px" width="50%" id="line-forward" x="50%" y="25%"></rect>
+            <rect class="connecting-line" height="2px" width="50%" id="line-backward" x="0" y="25%"></rect>
+            <rect class="connecting-line" height="2px" width="25%" id="line-start" x="25%" y="25%"></rect>
+            <rect class="connecting-line" height="2px" width="25%" id="line-end" x="50%" y="25%"></rect>
         </defs>
     </svg>
 </head>
@@ -190,8 +196,52 @@
         <div></div>
     </section>
     <!-- Education -->
-    <section class="education grid"></section>
-    <section class="test white"></section>
+    <section class="education grid">
+        <div class="flex centered education-container ">
+            <p class="education-text monospace flex centered">
+                Diploma in Computer Science, Technology and Telecommunications
+            </p>
+            <svg>
+                <use xlink:href="#line-start"></use>
+                <use xlink:href="#education-circle"></use>
+                <use xlink:href="#line-forward"></use>
+            </svg>
+        </div>
+        <div class="flex centered education-container ">
+            <p class="education-text monospace flex centered">
+                Java specialization course
+            </p>
+            <svg>
+                <use xlink:href="#line-backward"></use>
+                <use xlink:href="#education-circle"></use>
+                <use xlink:href="#line-forward"></use>
+            </svg>
+        </div>
+        <div class="flex centered education-container ">
+            <p class="education-text monospace flex centered">
+                Bachelor's degree in Information & Communication Technologies
+            </p>
+            <svg>
+                <use xlink:href="#line-backward"></use>
+                <use xlink:href="#education-circle"></use>
+                <use xlink:href="#line-forward"></use>
+            </svg>
+        </div>
+        <div class="flex centered education-container ">
+            <p class="education-text monospace flex centered">
+                Continuous formation and self-improvement
+            </p>
+            <svg>
+                <use xlink:href="#education-circle-pulse"></use>
+                <use xlink:href="#line-backward"></use>
+                <use xlink:href="#education-circle"></use>
+                <use xlink:href="#line-end"></use>
+            </svg>
+        </div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </section>
 </section>
 
 <script type="application/javascript" src="js/util.js"></script>

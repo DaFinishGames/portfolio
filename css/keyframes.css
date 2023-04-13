@@ -22,3 +22,14 @@
         border-color: transparent
     }
 }
+
+@keyframes pulse {
+    0%{
+        r: 20px;
+        opacity: 0;
+    }
+    100%{
+        r: 30px;
+        opacity: 100%;
+    }
+}

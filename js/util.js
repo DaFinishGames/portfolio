@@ -88,11 +88,11 @@ for (const skill of skills) {
 /* Start scrolling effect */
 let scrolling = false;
 var scrollingList = [];
-var presentationSection = document.querySelector(".presentation");
-var projectSection = document.querySelector(".project-table");
+var scrollingSlides = document.querySelectorAll(".scrolling-slide");
 
-scrollingList.push({element:presentationSection,selected:false});
-scrollingList.push({element:projectSection,selected:false});
+for (const slide of scrollingSlides) {
+    scrollingList.push({element:slide,selected:false});
+}
 
 const sectionObserver = new IntersectionObserver(entries => {
     for (const entry of entries) {
@@ -120,17 +120,24 @@ function activateScrollingEffect(e){
 function scrollToNextSection(forward){
     let elementIndexActive = scrollingList.findIndex(e => e.selected);
     let nextIndex = elementIndexActive + ( forward? 1 : -1);
-    scrolling = !isOutOfBounds(scrollingList,nextIndex);
-    if(scrolling){
-        window.removeEventListener("wheel", activateScrollingEffect);
-        let elementToScroll = scrollingList[nextIndex].element;
+    scrollToPage(nextIndex,true);
+}
+
+function scrollToPage(index,removeListeners){
+    if(!isOutOfBounds(scrollingList,index)){
+        if(removeListeners){
+            window.removeEventListener("wheel", activateScrollingEffect);
+            setTimeout(() => {
+                scrolling = false;
+                window.addEventListener("wheel",activateScrollingEffect);
+            }, 1500);
+        }
+        for (const scrollingElement of scrollingList) {
+            scrollingElement.selected = false;
+        }
+        let elementToScroll = scrollingList[index].element;
+        scrollingList[index].selected = true;
         window.scrollTo(0,elementToScroll.offsetTop-headerHeight);
-        scrollingList[elementIndexActive].selected = false;
-        scrollingList[nextIndex].selected = true;
-        setTimeout(() => {
-            scrolling = false;
-            window.addEventListener("wheel",activateScrollingEffect);
-        }, 1500);
     }
 }
 

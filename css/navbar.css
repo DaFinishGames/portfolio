@@ -10,6 +10,7 @@
     border-bottom-width: 1px;
     border-bottom-color: var(--background-color-light);
     border-bottom-style: solid;
+    z-index: 999;
 }
 
 .logo-container{
@@ -25,10 +26,6 @@
 .burger-container{
     justify-content: flex-start;
     padding-left: var(--padding-space);
-}
-
-.burger{
-    cursor: pointer;
 }
 
 #portfolioTitle{

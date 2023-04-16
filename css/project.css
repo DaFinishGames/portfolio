@@ -1,5 +1,5 @@
 .project-table{
-    height: var(--section-quarter-height);
+    height: var(--section-full-height-heading);
     --grid-n-column: 1fr 1fr 1fr;
     --grid-n-row: 1fr;
 }

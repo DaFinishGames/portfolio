@@ -1,13 +1,13 @@
 .skills{
-    height: var(--section-half-height);
-    --grid-n-column: 1fr 1fr 1fr 1fr;
-    --grid-n-row: 1fr 1fr;
+    height: var(--section-quarter-height);
+    --grid-n-column: 2fr 1fr 1fr 1fr 1fr 1fr 1fr 2fr;
+    --grid-n-row: 1fr;
 }
 .progress-bar{
     position: relative;
     color: var(--text-color);
 }
-.progress-bar svg{
+.progress-bar > svg{
     position: absolute;
     top: 0;
     left: 0;
@@ -28,8 +28,8 @@
 }
 
 .pointer-container{
-    --pointer-container-width: 100px;
-    --pointer-container-height: 10px;
+    --pointer-container-width: 60px;
+    --pointer-container-height: 6px;
     position: absolute;
     top: calc(50% - (var(--pointer-container-height) / 2 ));
     left: calc(50% - (var(--pointer-container-width) / 2 ));
@@ -48,7 +48,7 @@
     width: 100%;
     text-align: center;
     top: calc(50%);
-
+    font-size: 1.2em;
 }
 
 .rotate{

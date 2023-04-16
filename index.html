@@ -5,9 +5,9 @@
     <link type="text/css" href="css/stylesheet.css" rel="stylesheet" >
     <svg display="none">
         <defs>
-            <path d="M 0 5 L 0 -5 L -50 0 L 0 5" id="triangle"></path>
-            <circle class="outer-circle" r="50px" cx="50%" cy="100%" id="outer-circle"></circle>
-            <circle class="inner-circle" r="40px" cx="50%" cy="100%" id="inner-circle"></circle>
+            <path d="M 0 3 L 0 -3 L -30 0 L 0 3" id="triangle"></path>
+            <circle class="outer-circle" r="30px" cx="50%" cy="100%" id="outer-circle"></circle>
+            <circle class="inner-circle" r="20px" cx="50%" cy="100%" id="inner-circle"></circle>
             <circle class="education-circle" r="20px" cx="50%" cy="25%" id="education-circle"></circle>
             <circle class="education-circle-pulse" r="30px" cx="50%" cy="25%" id="education-circle-pulse"></circle>
             <rect class="connecting-line" height="2px" width="50%" id="line-forward" x="50%" y="25%"></rect>
@@ -20,7 +20,7 @@
 <body>
 <!-- Navigation Bar -->
 <header class="navbar grid">
-    <div class="burger-container flex centered"><p class="burger">&#9776;</p></div>
+    <div class="burger-container flex centered mouse-pointer"><p class="burger">&#9776;</p></div>
     <div class="flex centered"><p id="portfolioTitle">Alessandro's Portfolio</p></div>
     <div class="logo-container flex"><img class="logo" src="resources/Logo.png"/></div>
 </header>
@@ -28,10 +28,10 @@
 <!-- Hidden Bar -->
 <nav class="sidebar">
     <ul class="no-bullets">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Projects</a></li>
-        <li><a href="#">Skills</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a class="mouse-pointer" onclick="scrollToPage(0,false)">Know Me</a></li>
+        <li><a class="mouse-pointer" onclick="scrollToPage(1,false)">Projects</a></li>
+        <li><a class="mouse-pointer" onclick="scrollToPage(2,false)">Experience</a></li>
+        <li><a class="mouse-pointer" onclick="scrollToPage(3,false)">My Skills</a></li>
     </ul>
 </nav>
 
@@ -39,7 +39,7 @@
 <section class="main-container flex vertical-direction">
     <section class="filler"></section>
     <!-- Presentation -->
-    <section class="presentation grid">
+    <section class="presentation grid scrolling-slide">
         <div class="flex centered"> <img class="portrait" src="resources/alessandro.png"></div>
         <div class="flex centered vertical-direction">
             <p class="monospace job-title">Java developer</p>
@@ -57,7 +57,11 @@
                 Familiarity with Git , Atlassian tools, and Jenkins.
             </p>
             <p class="divisor"></p>
-            <a class="monospace download-button" href="resources/Alessandro%20Rosmarino%20CV.pdf" download="CV_Alessandro_Rosmarino" target="_blank"> Download my CV </a>
+            <div class="flex centered">
+                <a class="monospace download-button" href="mailTo://alessandrorosmarino@gmail.com" > Contact Me </a>
+                <a class="monospace download-button" href="#" onclick="scrollToPage(1,false)"> My Projects </a>
+                <a class="monospace download-button" href="resources/Alessandro%20Rosmarino%20CV.pdf" download="CV_Alessandro_Rosmarino" target="_blank"> Download my CV </a>
+            </div>
         </div>
     </section>
     <!--
@@ -87,7 +91,7 @@
     </section>
     -->
     <!-- Projects -->
-    <section class="project-table grid">
+    <section class="project-table grid scrolling-slide">
         <a href="https://github.com/alessandrorosmarino/Play-Performance" target="_blank" class="flex centered project vertical-direction">
             <div class="flex centered vertical-direction">
                 <p class="monospace title">Play Performance</p>
@@ -130,12 +134,45 @@
             <p class="typingEffect monospace goToProject">> Go to project!</p>
         </a>
     </section>
+
+    <!-- Working Experience -->
+    <section class="working-experience grid scrolling-slide">
+        <div class="working-experience-left grid">
+            <div class="flex centered">
+                <img class="working-experience-image" src="https://via.placeholder.com/355x200">
+            </div>
+            <div class="flex centered vertical-direction">
+                <p class="monospace work-title">LMS & Mobile App</p>
+                <p class="monospace work-description">In this project I worked for a big Italian Automotive company developing web pages, backend logic and REST webservices of an LMS....</p>
+            </div>
+        </div>
+        <div class="working-experience-right grid">
+            <div class="flex centered vertical-direction">
+                <p class="monospace work-title">Front-End development</p>
+                <p class="monospace work-description">In this project I worked for a banking company developing web pages....</p>
+            </div>
+            <div class="flex centered">
+                <img class="working-experience-image" src="https://via.placeholder.com/355x200">
+            </div>
+        </div>
+        <div class="working-experience-left grid">
+            <div class="flex centered">
+                <img class="working-experience-image" src="https://via.placeholder.com/355x200">
+            </div>
+            <div class="flex centered vertical-direction">
+                <p class="monospace work-title">Back-End development</p>
+                <p class="monospace work-description">In this project I developed web pages, backend logic....</p>
+            </div>
+        </div>
+    </section>
+
     <!-- Skills -->
-    <section class="skills grid">
+    <section class="skills grid scrolling-slide">
+        <div></div>
         <div class="progress-bar development">
             <svg><use xlink:href="#outer-circle"></use></svg>
             <svg><use xlink:href="#inner-circle"></use></svg>
-            <div class="pointer-container">
+            <div class="pointer-container flex centered">
                 <svg class="pointer-svg">
                     <use class="pointer" xlink:href="#triangle" x="50%" y="50%"></use>
                 </svg>
@@ -145,7 +182,7 @@
         <div class="progress-bar problem-solving">
             <svg><use xlink:href="#outer-circle"></use></svg>
             <svg><use xlink:href="#inner-circle"></use></svg>
-            <div class="pointer-container">
+            <div class="pointer-container flex centered">
                 <svg class="pointer-svg">
                     <use class="pointer" xlink:href="#triangle" x="50%" y="50%"></use>
                 </svg>
@@ -155,7 +192,7 @@
         <div class="progress-bar learning">
             <svg><use xlink:href="#outer-circle"></use></svg>
             <svg><use xlink:href="#inner-circle"></use></svg>
-            <div class="pointer-container">
+            <div class="pointer-container flex centered">
                 <svg class="pointer-svg">
                     <use class="pointer" xlink:href="#triangle" x="50%" y="50%"></use>
                 </svg>
@@ -165,18 +202,17 @@
         <div class="progress-bar adaptivity">
             <svg><use xlink:href="#outer-circle"></use></svg>
             <svg><use xlink:href="#inner-circle"></use></svg>
-            <div class="pointer-container">
+            <div class="pointer-container flex centered">
                 <svg class="pointer-svg">
                     <use class="pointer" xlink:href="#triangle" x="50%" y="50%"></use>
                 </svg>
             </div>
             <p class="monospace skill-text title"> Adaptivity </p>
         </div>
-        <div></div>
         <div class="progress-bar team">
             <svg><use xlink:href="#outer-circle"></use></svg>
             <svg><use xlink:href="#inner-circle"></use></svg>
-            <div class="pointer-container">
+            <div class="pointer-container flex centered">
                 <svg class="pointer-svg">
                     <use class="pointer" xlink:href="#triangle" x="50%" y="50%"></use>
                 </svg>
@@ -186,7 +222,7 @@
         <div class="progress-bar analysis">
             <svg><use xlink:href="#outer-circle"></use></svg>
             <svg><use xlink:href="#inner-circle"></use></svg>
-            <div class="pointer-container">
+            <div class="pointer-container flex centered">
                 <svg class="pointer-svg">
                     <use class="pointer" xlink:href="#triangle" x="50%" y="50%"></use>
                 </svg>
@@ -195,6 +231,7 @@
         </div>
         <div></div>
     </section>
+
     <!-- Education -->
     <section class="education grid">
         <div class="flex centered education-container ">
@@ -238,10 +275,8 @@
                 <use xlink:href="#line-end"></use>
             </svg>
         </div>
-        <div></div>
-        <div></div>
-        <div></div>
     </section>
+
 </section>
 
 <script type="application/javascript" src="js/util.js"></script>

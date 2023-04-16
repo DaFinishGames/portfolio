@@ -20,8 +20,8 @@
     background-color: var(--text-color);
     width: 80%;
     height: 2px;
-    margin-bottom: var(--padding-space);
-    margin-top: var(--padding-space);
+    margin-bottom: var(--divisor-space);
+    margin-top: var(--divisor-space);
 }
 
 .download-button{
@@ -30,7 +30,10 @@
     background-color: var(--background-color-light);
     color: var(--text-color);
     border-width: 0;
+    margin-left: var(--divisor-space);
+    margin-right: var(--divisor-space);
 }
+
 .download-button:hover{
     background-color: var(--effect-color);
 }

@@ -9,6 +9,7 @@
     --sidebar-width: 200px;
     --padding-space: 30px;
     --technology-icon: 40px;
+    --divisor-space: 20px;
     --background-color: #333333;
     --background-color-light: #717171;
     --text-color: #E2E2E2;
@@ -70,6 +71,10 @@ body{
 .title{
     margin-top: 0.5em;
     margin-bottom: 0.5em;
+}
+
+.mouse-pointer{
+    cursor: pointer;
 }
 
 /* Start Main-container */
